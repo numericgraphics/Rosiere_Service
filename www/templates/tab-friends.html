@@ -1,9 +1,20 @@
-<ion-view title="Friends">
-  <ion-content class="has-header">
+ <!-- <ion-view title="Friends">
+<ion-content class="has-header">
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
         {{friend.name}}
       </ion-item>
     </ion-list>
-  </ion-content>
-</ion-view>
+    </ion-content>
+    </ion-view>-->
+    
+    <ion-slide-box  on-slide-changed="slideHasChanged($index)">
+    <ion-slide ng-repeat="friend in friends">
+    <div class="box blue"><h1>{{friend.name}}</h1></div>
+    test
+    </ion-slide>
+  </ion-slide-box>
+  
+  
+
+
