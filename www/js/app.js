@@ -36,6 +36,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       abstract: true,
       templateUrl: "templates/tabs.html"
     })
+    
+    .state('openScreen', {
+    url: '/openScreen',
+    templateUrl: 'templates/openScreen.html',
+    controller: 'OpenScreenCtrl'
+  })
 
     // Each tab has its own nav history stack:
 
@@ -79,7 +85,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+ // $urlRouterProvider.otherwise('/tab/dash');
 
-});
+})
+
+.controller( 'mainController', ['$scope', '$location', '$timeout', '$http', '$state', function ( $scope, $location, $timeout, $http, $state) {
+  console.log("mainController init");
+  $state.go('openScreen');
+  
+  $timeout(function() {
+      
+      $state.go('tab.dash');
+    }, 5500);
+  
+  
+}]);
 

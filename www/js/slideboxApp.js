@@ -8,6 +8,7 @@ angular.module('ionicApp', ['ionic'])
     templateUrl: 'templates/intro.html',
     controller: 'IntroCtrl'
   })
+  
   .state('main', {
     url: '/main',
     templateUrl: 'templates/main.html',

@@ -12,4 +12,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
+})
+
+.controller('OpenScreenCtrl', function($scope, $stateParams, Friends) {
+  console.log("OpenScreenCtrl init");
 });
