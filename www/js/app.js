@@ -93,10 +93,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   console.log("mainController init");
   $state.go('openScreen');
   
-  $timeout(function() {
+  // $timeout(function() {
       
-      $state.go('tab.dash');
-    }, 5500);
+  //     $state.go('tab.dash');
+  //   }, 5500);
   
   
 }]);

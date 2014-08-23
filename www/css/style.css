@@ -5,3 +5,9 @@
   width: 300px;
   background-color: #999;
 }
+
+#logo img {
+  display: block;    
+  margin:auto;
+  
+}
