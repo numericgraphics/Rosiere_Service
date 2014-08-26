@@ -14,6 +14,11 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
 })
 
-.controller('OpenScreenCtrl', function($scope, $stateParams, Friends) {
+.controller('OpenScreenCtrl', function($scope, $state) {
   console.log("OpenScreenCtrl init");
+  
+  $scope.onClickEnter = function(){
+    $state.go('tab.dash');
+  }
 });
+
