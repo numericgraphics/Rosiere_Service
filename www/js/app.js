@@ -88,9 +88,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     //$urlRouterProvider.otherwise('/openScreen');
 })
 
-.controller( 'mainController', ['$scope', '$location', '$timeout', '$http', '$state', function ( $scope, $location, $timeout, $http, $state) {
+.controller( 'mainController', ['$scope', '$location', '$timeout', '$http', '$state', '$ionicLoading', function ( $scope, $location, $timeout, $http, $state, $ionicLoading) {
   console.log("mainController init");
-  $state.go('openScreen');
+  
+  // Setup the loader
+  $ionicLoading.show({
+    content: 'Loading',
+    animation: 'fade-in',
+    showBackdrop: false,
+    maxWidth: 200,
+    showDelay: 0
+  });
+  
+  // Set a timeout to clear loader, however you would actually call the $ionicLoading.hide(); method whenever everything is ready or loaded.
+  $timeout(function () {
+    $ionicLoading.hide();
+    $state.go('openScreen');
+  }, 2000);
+  
+  
+  
   
   // $timeout(function() {
       

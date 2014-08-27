@@ -41,9 +41,13 @@ padding-left:0px !important
   display: block;    
   margin:0;
 }
-.centerinCell a {
+.centerinCell button {
   width:100px;
   box-shadow:0px 3px 6px #000000
+}
+.tabs-striped {
+  color: red;
+  
 }
 /*#buttons div {*/
 /*  display: block;    */
