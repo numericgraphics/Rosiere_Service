@@ -90,29 +90,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .controller( 'mainController', ['$scope', '$location', '$timeout', '$http', '$state', '$ionicLoading', function ( $scope, $location, $timeout, $http, $state, $ionicLoading) {
   console.log("mainController init");
+  $scope.loading = true;
   
   // Setup the loader
-  $ionicLoading.show({
-    content: 'Loading',
-    animation: 'fade-in',
-    showBackdrop: false,
-    maxWidth: 200,
-    showDelay: 0
-  });
+  // $ionicLoading.show({
+  //   content: 'Loading',
+  //   animation: 'fade-in',
+  //   showBackdrop: false,
+  //   maxWidth: 200,
+  //   showDelay: 0
+  // });
   
   // Set a timeout to clear loader, however you would actually call the $ionicLoading.hide(); method whenever everything is ready or loaded.
-  $timeout(function () {
-    $ionicLoading.hide();
-    $state.go('openScreen');
-  }, 2000);
+  // $timeout(function () {
+  //   $ionicLoading.hide();
+  //   $state.go('openScreen');
+  // }, 2000);
   
   
   
   
-  // $timeout(function() {
-      
-  //     $state.go('tab.dash');
-  //   }, 5500);
+  $timeout(function() {
+      $scope.loading = false;
+      $state.go('tab.dash');
+    }, 5500);
   
   
 }]);
