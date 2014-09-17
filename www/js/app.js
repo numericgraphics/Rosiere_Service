@@ -30,62 +30,140 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    .state('openScreen', {
-    url: '/openScreen',
-    templateUrl: 'templates/openScreen.html',
-    controller: 'OpenScreenCtrl'
+  //   .state('openScreen', {
+  //   url: '/openScreen',
+  //   templateUrl: 'templates/openScreen.html',
+  //   controller: 'OpenScreenCtrl'
+  // })
+  
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
   })
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+  
+  
+/////////////////////////////////////////////////////////////////////////
+    .state('menu', {
+      url: "/menu",
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "templates/menu.html"
     })
 
     // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-      url: '/dash',
+    
+    .state('menu.secours', {
+      url: '/secours',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'container': {
+          templateUrl: 'templates/secours.html',
+          controller: 'secoursCtrl'
         }
       }
     })
-
-    .state('tab.friends', {
-      url: '/friends',
+    
+    .state('menu.plan', {
+      url: '/plan',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'container': {
+          templateUrl: 'templates/plan.html',
+          controller: 'planCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    
+    .state('menu.meteo', {
+      url: '/meteo',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        'container': {
+          templateUrl: 'templates/meteo.html',
+          controller: 'meteoCtrl'
         }
       }
     })
-
-    .state('tab.account', {
-      url: '/account',
+    
+    .state('menu.horaires', {
+      url: '/horaires',
       views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'container': {
+          templateUrl: 'templates/horaires.html',
+          controller: 'horairesCtrl'
         }
       }
-    });
+    })
+    
+    .state('menu.agenda', {
+      url: '/agenda',
+      views: {
+        'container': {
+          templateUrl: 'templates/agenda.html',
+          controller: 'agendaCtrl'
+        }
+      }
+    })
+    
+    .state('menu.itineraires', {
+      url: '/itineraires',
+      views: {
+        'container': {
+          templateUrl: 'templates/itineraires.html',
+          controller: 'itinerairesCtrl'
+        }
+      }
+    })
+    
+    .state('menu.services', {
+      url: '/services',
+      views: {
+        'container': {
+          templateUrl: 'templates/services.html',
+          controller: 'servicesCtrl'
+        }
+      }
+    })
+/////////////////////////////////////////////////////////////////////////
+    // .state('tab.dash', {
+    //   url: '/dash',
+    //   views: {
+    //     'tab-dash': {
+    //       templateUrl: 'templates/tab-dash.html',
+    //       controller: 'DashCtrl'
+    //     }
+    //   }
+    // })
+
+    // .state('tab.friends', {
+    //   url: '/friends',
+    //   views: {
+    //     'tab-friends': {
+    //       templateUrl: 'templates/tab-friends.html',
+    //       controller: 'FriendsCtrl'
+    //     }
+    //   }
+    // })
+    // .state('tab.friend-detail', {
+    //   url: '/friend/:friendId',
+    //   views: {
+    //     'tab-friends': {
+    //       templateUrl: 'templates/friend-detail.html',
+    //       controller: 'FriendDetailCtrl'
+    //     }
+    //   }
+    // })
+
+    // .state('tab.account', {
+    //   url: '/account',
+    //   views: {
+    //     'tab-account': {
+    //       templateUrl: 'templates/tab-account.html',
+    //       controller: 'AccountCtrl'
+    //     }
+    //   }
+    // });
 
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/dash');
-    //$urlRouterProvider.otherwise('/openScreen');
+    //$urlRouterProvider.otherwise('/home');
 })
 
 .controller( 'mainController', ['$scope', '$location', '$timeout', '$http', '$state', '$ionicLoading', function ( $scope, $location, $timeout, $http, $state, $ionicLoading) {
@@ -112,9 +190,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   $timeout(function() {
       $scope.loading = false;
-      $state.go('tab.dash');
+      $state.go('home');
     }, 5500);
-  
+ // $state.go('home');
   
 }]);
 

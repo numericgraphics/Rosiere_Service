@@ -6,10 +6,10 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background-image:
+  /*background-image:
     linear-gradient(
       #1C2DE6, #727DF2
-    );
+    );*/
 }
 /*
 .swipeArea {

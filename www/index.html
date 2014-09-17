@@ -1,5 +1,5 @@
 <!-- si prob git slash, 
-     commit : git commit -m "", git push origin master
+     commit : git commit -m "" || commit : git commit -am "", git push origin master
        update : git pull origin
 -->
 
@@ -36,8 +36,18 @@
   <div  id="logo" ng-cloak ng-show="loading">
     <img src="img/logo-st-foy.png">
   </div>
+  
+  <ion-nav-bar animation="nav-title-slide-ios7" 
+             class="bar-positive" 
+             back-button-type="button-icon" 
+             back-button-icon="ion-arrow-left-c">
+               <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+             </ion-nav-bar>
 
-    <ion-nav-view class="slide-in-right"></ion-nav-view>
+
+    <ion-nav-view class="nav-title-slide-ios7"></ion-nav-view>
+    
+    <div class="bar bar-footer bar-positive"></div>
     
   </body>
 </html>

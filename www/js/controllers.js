@@ -14,6 +14,46 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
 })
 
+
+.controller( 'HomeCtrl', ['$scope',  '$state', function ( $scope, $state) {
+  console.log('HomeCtrl');
+  $scope.gotoPlan  = function(){
+    $state.go('menu.plan');
+    
+  }
+  
+}])
+
+
+.controller( 'planCtrl', ['$scope',  function($scope) {
+  console.log('planCtrl');
+}])
+
+.controller( 'secoursCtrl', ['$scope',  function($scope) {
+  console.log('secoursCtrl');
+}])
+
+.controller( 'meteoCtrl', ['$scope',  function($scope) {
+  console.log('meteoCtrl');
+}])
+
+.controller( 'horairesCtrl', ['$scope',  function($scope) {
+  console.log('horairesCtrl');
+}])
+
+.controller( 'agendaCtrl', ['$scope',  function($scope) {
+  console.log('agendaCtrl');
+}])
+
+.controller( 'itinerairesCtrl', ['$scope',  function($scope) {
+  console.log('itinerairesCtrl');
+}])
+
+.controller( 'servicesCtrl', ['$scope',  function($scope) {
+  console.log('servicesCtrl');
+}])
+
+
 .controller('OpenScreenCtrl', function($scope, $state, $ionicLoading, $timeout) {
   console.log("OpenScreenCtrl init");
 
