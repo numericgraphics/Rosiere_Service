@@ -42,15 +42,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'HomeCtrl'
   })
   
+  .state('splashscreen', {
+    url: '/splashscreen',
+    templateUrl: 'templates/splashscreen.html',
+    controller: 'splashscreenCtrl'
+  })
+  
   
 /////////////////////////////////////////////////////////////////////////
+
+
     .state('menu', {
       url: "/menu",
       abstract: true,
       templateUrl: "templates/menu.html"
     })
 
-    // Each tab has its own nav history stack:
     
     .state('menu.secours', {
       url: '/secours',
@@ -163,13 +170,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/tab/dash');
-    //$urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
 })
 
 .controller( 'mainController', ['$scope', '$location', '$timeout', '$http', '$state', '$ionicLoading', function ( $scope, $location, $timeout, $http, $state, $ionicLoading) {
   console.log("mainController init");
-  $scope.loading = true;
-  
+  //$scope.loading = true;
+  //$state.go('splashscreen');
   // Setup the loader
   // $ionicLoading.show({
   //   content: 'Loading',
@@ -188,10 +195,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   
   
-  $timeout(function() {
-      $scope.loading = false;
-      $state.go('home');
-    }, 5500);
+ // $timeout(function() {
+     // $scope.loading = false;
+     // $state.go('home');
+   // }, 5500);
  // $state.go('home');
   
 }]);

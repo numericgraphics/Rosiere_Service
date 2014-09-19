@@ -25,6 +25,14 @@ angular.module('starter.controllers', [])
 }])
 
 
+.controller( 'splashscreenCtrl', ['$scope', '$state', '$timeout', function($scope, $state, $timeout) {
+  console.log('splashscreenCtrl');
+  $timeout(function() {
+      $state.go('menu.home');
+    }, 5000);
+}])
+
+
 .controller( 'planCtrl', ['$scope',  function($scope) {
   console.log('planCtrl');
 }])
