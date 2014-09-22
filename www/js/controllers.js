@@ -49,8 +49,37 @@ angular.module('starter.controllers', [])
   console.log('horairesCtrl');
 }])
 
-.controller( 'agendaCtrl', ['$scope',  function($scope) {
+.controller( 'agendaCtrl', ['$scope', '$ionicModal',  function($scope, $ionicModal) {
   console.log('agendaCtrl');
+  $scope.animation = "";
+  $scope.date = "";
+  
+  $ionicModal.fromTemplateUrl('templates/modalAgenda.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function(val) {
+    $scope.modal.show();
+    switch (val) {
+      case 'opening':
+        $scope.animation = "Ouverture de la station."
+        break;
+      case 'noel':
+        $scope.animation = "Fete de Noel."
+        break;
+      case 'closing':
+        $scope.animation = "Fermeture de la station."
+        break;
+    }
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  
+  
+  
 }])
 
 .controller( 'itinerairesCtrl', ['$scope',  function($scope) {
