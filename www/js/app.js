@@ -119,6 +119,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
     
+    .state('menu.commerces', {
+      url: '/commerces',
+      views: {
+        'container': {
+          templateUrl: 'templates/commerces.html',
+          controller: 'commercesCtrl'
+        }
+      }
+    })
+    
     .state('menu.services', {
       url: '/services',
       views: {

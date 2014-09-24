@@ -49,6 +49,49 @@ angular.module('starter.controllers', [])
   console.log('horairesCtrl');
 }])
 
+.controller( 'commercesCtrl', ['$scope',  function($scope) {
+  console.log('commercesCtrl');
+  
+   $scope.groups = [];
+   var namesArray = ["Magasins de sports", "Bars et Restaurants", "Artisans", "Commerces"];
+   var storesArrays = [["Zig zag", "Skiset", "Intersport", "Ski republic", "Skimium by PrécisionSki"], 
+                      ["Le St Germain", "La Bergerie", "Chez Mérie", "Restaurant Les Marquises", "La Maison à Colonnes", "Restaurant Le Monal"],
+                      ["Dams", "Sainte-Foy Construction", "Atelier Jean-Louis Eustache"],
+                      ["Sainte Foy Nature Santé", "Une Marmotte au Soleil", "Artisans"]];
+   
+   
+  for (var i=0; i<namesArray.length; i++) {
+    $scope.groups[i] = {
+      name: namesArray[i],
+      items: []
+    };
+    for (var j=0; j<storesArrays[i].length; j++) {
+      $scope.groups[i].items.push(storesArrays[i][j]);
+    }
+  }
+  
+  /*
+   * if given group is the selected group, deselect it
+   * else, select the given group
+   */
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+  
+  $scope.clickItem = function(index) {
+    console.log(index);
+  };
+  
+  
+}])
+
 .controller( 'agendaCtrl', ['$scope', '$ionicModal',  function($scope, $ionicModal) {
   console.log('agendaCtrl');
   $scope.animation = "";
